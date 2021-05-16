@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Binance Futures Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,30 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" offset="5">
+        <ion-input type="number" placeholder="Entry Price" [(ngModel)]="entry"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" placeholder="Stop Loss" [(ngModel)]="stopLoss"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" offset="5">
+        <ion-input type="number" placeholder="Position Size" [(ngModel)]="positionSize"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" placeholder="Position Risk" [(ngModel)]="positionRisk"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" offset="5">
+        <ion-button type="submit" (click)="onSubmit()">Calculate</ion-button>
+      </ion-col>
+      <ion-col>
+        <h4>x{{ leverage }}</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
